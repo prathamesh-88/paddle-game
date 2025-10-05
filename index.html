@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pong Game</title>
+		<style>
+			body {
+				background: #222;
+				color: #fff;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+                font-family: 'Courier New', Courier, monospace;
+			}
+			h1 {
+				margin-bottom: 20px;
+			}
+			canvas {
+				background: #000;
+				display: block;
+				margin: 0 auto;
+				border: 2px solid #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Pong Game</h1>
+		<div style="margin-bottom: 16px; display: flex; gap: 16px; align-items: center;">
+			<label style="color: #fff;">Ball Speed:
+				<input id="ball-speed-input" type="number" min="1" max="20" value="5" style="width: 60px;">
+			</label>
+			<label style="color: #fff;">Bot Speed:
+				<input id="bot-speed-input" type="number" min="1" max="20" value="1" style="width: 60px;">
+			</label>
+		</div>
+		<div
+			id="start-screen"
+			style="
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background: rgba(34, 34, 34, 0.98);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				z-index: 10;
+			"
+		>
+			<h2 style="font-size: 2.5rem; margin-bottom: 1.5rem">Pong Game</h2>
+			<button
+				id="start-btn"
+				style="
+					font-size: 2rem;
+					padding: 1rem 2.5rem;
+					border-radius: 10px;
+					border: none;
+					background: #fff;
+					color: #222;
+					cursor: pointer;
+                    font-family: inherit;
+				"
+			>
+				Start
+			</button>
+			<p
+				style="
+					margin-top: 2rem;
+					color: #aaa;
+					font-size: 1.1rem;
+				"
+			>
+				Controls:<br />W/S or ⬆️/⬇️
+			</p>
+		</div>
+		<canvas id="pong" width="800" height="500"></canvas>
+		<script src="index.js"></script>
+	</body>
+</html>
